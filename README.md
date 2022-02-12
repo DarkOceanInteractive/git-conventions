@@ -1,10 +1,11 @@
 # Git conventions
 
-How to use Git and Github and some rules to follow across the different
+How to use Git and GitHub and some rules to follow across the different
 projects.
 
 ## Table of contents
 
+- [Introduction](#introduction)
 - [What are Git and GitHub ?](#what-are-git-and-github-)
 - [Installation](#installation)
   - [Git via terminal](#git-via-terminal)
@@ -32,7 +33,19 @@ projects.
     - [Body](#body)
     - [Examples](#examples)
   - [Branch naming conventions](#branch-naming-convention)
+  - [Repository naming conventions](#repository-naming-conventions)
 - [Commands memo](#commands-memo)
+
+## Introduction
+
+This document presents a guide to Git and GitHub as well as good practices and
+conventions. Most of those conventions are based on the [the Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/),
+but some are purely personal and/or arbitrary.
+
+If you already know Git, you might want to take a look at the table of contents
+and skip the parts you feel comfortable with. However, some tips are given here
+and there that might be worth a look. Most of the tips are in the [Workflow and rules to follow](#workflow-and-rules-to-follow)
+section.
 
 ## What are Git and GitHub ?
 
@@ -84,7 +97,7 @@ available in your terminal.
 
 There are many GUI clients for Git, but if you need to use one, I would advise
 GitKraken, which you can install by following [these steps](https://support.gitkraken.com/how-to-install/).
-Or if you only do code, and use an IDE such as Intellij Idea or Visual Studio,
+Or if you only do code, and use an IDE such as IntelliJ Idea or Visual Studio,
 you might want to look for a Git extension / plugin if they are not integrated
 by default.
 
@@ -93,7 +106,7 @@ by default.
 ### Setting up GitHub
 
 First of all, to interact with GitHub you need to prove your identity. To avoid
-having to enter your email and password everytime you ask GitHub something, you
+having to enter your email and password every time you ask GitHub something, you
 might want to setup a SSH key authentication. Follow [this guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 to do so. Once you've created the SSH key following the first few steps, don't
 forget to add it to your GitHub account following [the next part of the guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
@@ -121,7 +134,7 @@ repository as shown below:
 </p>
 
 Then clone the repository using this link in the command `git clone <url>`
-(replace `<url>` with the actual repository url). This creates a local directory
+(replace `<url>` with the actual repository URL). This creates a local directory
 containing the repository content.
 
 #### Committing your changes and pushing them to GitHub
@@ -154,7 +167,7 @@ This will simply download anything new that is on GitHub but not yet in the
 local repository.
 
 > ⚠️ Beware:  to avoid overwriting other people's work, you should `pull` every 
-ime before `committing` your work. Otherwise, you might end up with an error
+time before `committing` your work. Otherwise, you might end up with an error
 when `pushing`, saying that your local repository is not synchronized with the
 online one.
 
@@ -203,7 +216,7 @@ categorize your issue (is it a bug report, a request for a feature, a question,
 
 #### Branches
 
-Very early, you might encounter `conflicts`. These happend when you worked on
+Very early, you might encounter `conflicts`. These happen when you worked on
 the same files and lines as someone else. It will usually occur while pulling or
 pushing, as you try to synchronize your local work with the online repository.
 
@@ -251,7 +264,7 @@ It is also a great time for running tests to make sure nothing breaks (new bugs
 introduced) when adding those changes.
 
 To submit a pull request, you must push before to your branch. If you just
-pushed, GitHub might great you with a popup like this one:
+pushed, GitHub might great you with a pop-up like this one:
 
 <p align="center">
   <img alt="Recent pushes popup" src="assets/recent-pushes-popup.png"/>
@@ -279,7 +292,7 @@ of the content of your branch.
 
 ## Workflow and rules to follow
 
-You now know nearly everything you need to know about Git, it's time to get to
+You now know nearly everything there is to know about Git, it's time to get to
 know some good practices it would be nice to follow for consistency over the
 project and to avoid common problems.
 
@@ -288,8 +301,8 @@ project and to avoid common problems.
 **Nothing should be committed directly to the main branch.**
 
 When you want to apply changes, you should:
-- Create a github `issue` that describes what the changes are about (if you
-use Github Projects (TO-DO lists), this also helps keeping track of the TO-DOs)
+- Create a GitHub `issue` that describes what the changes are about (if you
+use GitHub Projects (TO-DO lists), this also helps keeping track of the TO-DOs)
 - Create a `dedicated branch` for this issue, following the branch naming
 convention below
 - Commit your work to this branch, following the commit convention below
@@ -304,7 +317,7 @@ When merging a pull request, the default behaviour creates a new commit with a
 message like `Merge pull request #<id> from <username>/<branch-name>`.  
 If that may help keep track of merges in the history, I personally prefer not
 including this commit, as it adds nothing useful to the rest of the branch's
-commits and polutes the history with a [non-conventional commit message](#commit-conventions).
+commits and pollutes the history with a [non-conventional commit message](#commit-conventions).
 
 For that reason, when merging pull requests, please make sure to select the
 `Rebase and merge` option instead of the `Create a merge commit` option. This
@@ -345,7 +358,7 @@ missing semi-colons, etc)
 - `test`: changes that add missing tests or correcting existing tests
 - `docs`: changes in documentation only (README, wiki, comments, ...)
 - `build`: changes that affect the build system or external dependencies
-- `ci`: changes to the CI (Github Actions)
+- `ci`: changes to the CI (GitHub Actions)
 
 #### Scopes
 
@@ -406,10 +419,20 @@ Try to give your branch a descriptive name by following the format below:
 </pre>
 
 `type`: same as for the commit messages (see above)  
-`subject`: short summary (usualy up to 5 words) of the changes that are being
+`subject`: short summary (usually up to 5 words) of the changes that are being
 applied.
 
 > i.e.: `fix/camera-door-frames`
+
+### Repository naming conventions
+
+Finally, this is purely a personal preference and arbitrary, but I prefer
+repositories to be named according to the kebab-case naming convention:
+
+- the entire name must be in lower case
+- spaces are replaced by dashes (`-`)
+
+> i.e.: `git-conventions`
 
 ## Commands memo
 
