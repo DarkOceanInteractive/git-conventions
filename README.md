@@ -15,6 +15,10 @@ projects.
 - [Getting started](#getting-started)
   - [Setting up GitHub](#setting-up-github)
   - [Working with Git and GitHub](#working-with-git-and-github)
+    - [Creating a repository on GitHub](#creating-a-repository-on-github)
+      - [Creating a personal repository](#creating-a-personal-repository)
+      - [Creating a repository in the organization](#creating-a-repository-in-the-organization)
+      - [Repository visibility](#repository-visibility)
     - [Cloning a project](#cloning-a-project)
     - [Committing your changes and pushing them to GitHub](#committing-your-changes-and-pushing-them-to-github)
     - [Receiving online commits locally](#receiving-online-commits-locally)
@@ -121,7 +125,56 @@ Git works with `repositories`. A repository contains a collection of various
 files of a project. It keeps an history of `commits`, where each commits is a
 snapshot, a version of all the files in the repository.
 
-#### Cloning a project
+#### Creating a repository on GitHub
+
+On GitHub, you are part of an organization. An organization can have its own
+repositories, projects (TO-DO lists), users, ... We will see how to create a
+repository in your organization, but you can also create a personal repository
+on your own account.
+
+##### Creating a personal repository
+
+Go to [GitHub's main page](https://github.com/), and on the top-left side of
+the page, click the `New` button.
+
+<p align="center">
+  <img alt="Create a personal repository" src="assets/create-personal-repo.png"/>
+</p>
+
+From here, choose the repository's name, [visibility](#repository-visibilty),
+and click `Create repository`. GitHub then gives you some instructions to get
+started with this new repository.
+
+#### Creating a repository in the organization
+
+Go to your organization's [main page](https://github.com/DarkOceanInteractive),
+and at the bottom of the page, click the `New` button.
+
+<p align="center">
+  <img alt="Create a repository in the organization" src="assets/create-org-repo.png"/>
+</p>
+
+You are prompted with the same screen at for a personal repository. Choose the
+repository's name following the [repository naming conventions](#repository-naming-conventions)
+described later and its [visibility](#repository-visibilty), then click
+`Create repository`.
+
+##### Repository visibility
+
+On GitHub, repositories can be private or public.
+
+- `public` means anyone, logged in GitHub or not, can see the entirety of your
+repository: content, issues, pull requests, contributors, ... This option is
+very common due to the [`open-source` mindset](https://opensource.com/resources/what-open-source).
+- `private` means only contributors will have access to the repository. Other
+users won't even see it if they search for it. In a personal repository,
+contributors are you and people you manually add to work on the repository.
+In an organization, by default contributors are all members of the organization.
+
+In general, if you don't have anything sensitive, the preferred option is to
+make your repositories `public`.
+
+#### Cloning a repository
 
 To start off, repositories are stored online (here, on GitHub). However to work
 on them you must download them locally on your computer.
