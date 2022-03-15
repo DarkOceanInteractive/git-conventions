@@ -409,7 +409,7 @@ any behaviour
 - `style`: changes that do not affect the meaning (white-space, formatting,
 missing semi-colons, etc)
 - `test`: changes that add missing tests or correcting existing tests
-- `docs`: changes in documentation only (README, wiki, comments, ...)
+- `doc`: changes in documentation only (README, wiki, comments, ...)
 - `build`: changes that affect the build system or external dependencies
 - `ci`: changes to the CI (GitHub Actions)
 
