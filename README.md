@@ -244,7 +244,7 @@ git pull origin <branch-name>
 git commit -m "<message>"
 
 # sending the new local commit to GitHub
-git pus origin <branch-name>h
+git push origin <branch-name>
 ```
 
 ### Slightly more advanced concepts
