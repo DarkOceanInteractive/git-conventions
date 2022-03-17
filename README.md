@@ -53,9 +53,9 @@ section.
 
 ## What are Git and GitHub ?
 
-Git is version control system. Basically, it's a tool for saving work
+Git is a version control system. Basically, it's a tool for saving work
 (preferably not too large files, such as text, code and sparingly some images
-and other assets). Git keeps an history of every changes made to a project. It
+and other assets). Git keeps an history of all changes made to a project. It
 is especially useful when bugs are introduced in a software, as it allows to
 roll back to previous versions and review changes to see when and how the bug
 was introduced. Other than that, it is extremely convenient to work together on
@@ -111,7 +111,7 @@ by default.
 
 First of all, to interact with GitHub you need to prove your identity. To avoid
 having to enter your email and password every time you ask GitHub something, you
-might want to setup a SSH key authentication. Follow [this guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+might want to setup an SSH key authentication. Follow [this guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 to do so. Once you've created the SSH key following the first few steps, don't
 forget to add it to your GitHub account following [the next part of the guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
@@ -127,7 +127,7 @@ snapshot, a version of all the files in the repository.
 
 #### Creating a repository on GitHub
 
-On GitHub, you are part of an organization. An organization can have its own
+On GitHub, you may be part of an organization. An organization can have its own
 repositories, projects (TO-DO lists), users, ... We will see how to create a
 repository in your organization, but you can also create a personal repository
 on your own account.
@@ -192,30 +192,31 @@ containing the repository content.
 
 #### Committing your changes and pushing them to GitHub
 
-Understand that any changes then made locally is not synchronized with GitHub
-unless you do what it takes.
+Understand that after cloning, any changes made locally are not synchronized 
+with GitHub yet, unless you do what it takes.
 
-To save your changes, you need to create a `commit`. First, `add` the files you
-want to save to the commit (this step is also called `staging` by some GUIs).
+To synchronize your changes, you need to create a `commit`. First, `add` the 
+files you want to save to the commit (this step is also called `staging` by some 
+GUIs).
 Type the command `git add <path/to/file>` for each file you want to add or
 `git add *` to add them all at once.
 
-Once that done, create a commit using the command `git commit -m "<message>"`.
+Once that is done, create a commit using the command `git commit -m "<message>"`.
 This creates a new commit described by the message you supply. We will see [later](#commit-conventions)
 how to write a good message.
 
-At that point, you have a new commit locally. However, it is still not available
-on GitHub (and thus, not visible to other users). To synchronize it with GitHub,
-type the command `git push origin <branch-name>`. Replace `<branch-name>` with
-the current branch name. Branches will be explained [later](#branches). For now,
-use `main`.
+At that point, you have a new commit locally. However, it is still not 
+synchronized with GitHub (and thus, not visible to other users). To synchronize 
+it with GitHub, type the command `git push origin <branch-name>`. Replace 
+`<branch-name>` with the current branch name. Branches will be explained 
+[later](#branches). For now, use `main`.
 
 #### Receiving online commits locally
 
 So far, we only added our work to GitHub. However when other users also add
 their work, we need to get it locally. To do so, type the command
 `git pull origin <branch-name>`. Same as for the push command, branches will be
-explained later, for now, use `main`.  
+explained later. For now, use `main`.  
 This will simply download anything new that is on GitHub but not yet in the
 local repository.
 
@@ -250,34 +251,35 @@ git push origin <branch-name>
 ### Slightly more advanced concepts
 
 There is much more to Git and GitHub, herebelow we will introduce some more
-advanced concepts. If they often prove very useful, they are not absolutely
+advanced concepts. While they often prove very useful, they are not absolutely
 necessary, so maybe don't focus on these too much at the beginning.
 
 #### Issues
 
-Issues describe bugs, wanted features, questions, requests about a repository.
-To create an issue, go to the `Issues` tab on the repository's page on GitHub,
-and click `New issue`.
+Issues describe bugs, wanted features, questions, and requests about a 
+repository. To create an issue, go to the `Issues` tab on the repository's page 
+on GitHub, and click `New issue`.
 
 <p align="center">
   <img alt="Create an issue" src="assets/create-issue.png"/>
 </p>
 
-Then you can assign people to the issue, add a description and a label to
+Then you can assign people to the issue, add a description and add a label to
 categorize your issue (is it a bug report, a request for a feature, a question,
 ...?). The repository contributors can then discuss the issue here.
 
 #### Branches
 
 Very early, you might encounter `conflicts`. These happen when you worked on
-the same files and lines as someone else. It will usually occur while pulling or
-pushing, as you try to synchronize your local work with the online repository.
+the same files and lines of code as someone else. It will usually occur while 
+pulling or pushing, as you try to synchronize your local work with the online 
+repository.
 
-Conflicts can sometime be a pain to solve, and it's often preferable to solve
-them one big time rather than at almost every commit we make. One way to do that
-is to work with branches. Think of a repository's commits history as a tree's
-trunk. The "trunk" is called the main branch. Other git branches are like tree
-branches, that leave the trunk at some point in the tree's growth, and
+Conflicts can sometimes be a pain to solve, and it's often preferable to solve
+them all at once after a while rather than at almost every commit we make. One 
+way to do that is to work with branches. Think of a repository's commit history 
+as a tree's trunk. The "trunk" is called the main branch. Other git branches are 
+like tree branches, that leave the trunk at some point in the tree's growth, and
 eventually join the trunk back at a latter point.  
 When working on a project, a good practice is to create a branch for each
 feature you or a sub-team wants to develop.  
@@ -291,8 +293,8 @@ conflicts to solve. You can keep working on your feature in peace. Once your
 feature is finished, you can merge your branch with the main branch. That is the
 only time you might encounter conflicts.
 
-If there are conflicts to merge the branch, they must be resolved manually by
-rebasing your branch onto the main branch. To do that, you can use the
+If there are conflicts when merging the branch, they must be resolved manually 
+by rebasing your branch onto the main branch. To do that, you can use the
 `git rebase <branch-name>` command (replace `<branch-name>` by the name of the
 branch you want to merge your branch into, usually `main`).
 
@@ -316,7 +318,7 @@ into the main branch.
 It is also a great time for running tests to make sure nothing breaks (new bugs
 introduced) when adding those changes.
 
-To submit a pull request, you must push before to your branch. If you just
+To submit a pull request, you must first push to your branch. If you just
 pushed, GitHub might great you with a pop-up like this one:
 
 <p align="center">
@@ -345,8 +347,8 @@ of the content of your branch.
 
 ## Workflow and rules to follow
 
-You now know nearly everything there is to know about Git, it's time to get to
-know some good practices it would be nice to follow for consistency over the
+You now know nearly everything there is to know about Git. It's time to get to
+know some good practices which would be nice to follow for consistency over the
 project and to avoid common problems.
 
 ### Workflow
@@ -362,13 +364,13 @@ convention below
 - Once you are done, create a `pull request` and link to the issue:
    - Assign yourself to the pull request
    - Assign reviewers
-- After the pull request has been reviewed, it can be merged.
+- After the pull request has been reviewed, it may be merged.
 
 ### Merging a pull request
 
 When merging a pull request, the default behaviour creates a new commit with a
 message like `Merge pull request #<id> from <username>/<branch-name>`.  
-If that may help keep track of merges in the history, I personally prefer not
+While that may help keep track of merges in the history, I personally prefer not
 including this commit, as it adds nothing useful to the rest of the branch's
 commits and pollutes the history with a [non-conventional commit message](#commit-conventions).
 
@@ -393,7 +395,7 @@ Each commit message should follow the following format:
 > ⚠️ The length of the first line  of the commit message (type + scope +
 subject) should not exceed 80 characters in length. Otherwise, it might cause
 readability issues as GitHub will only display 80 characters in the commits
-history. Make the subject really short, and add details in the body
+history. Make the subject really short, and add details in the body.
 
 #### Types
 
@@ -471,7 +473,7 @@ Try to give your branch a descriptive name by following the format below:
 <b><a href="#types">&lt;type&gt;</a></b></font>/<b><a href="#subject">&lt;subject&gt;</a></b>
 </pre>
 
-`type`: same as for the commit messages (see above)  
+`type`: same as for the commit messages (see above).  
 `subject`: short summary (usually up to 5 words) of the changes that are being
 applied.
 
@@ -485,15 +487,15 @@ repositories to be named according to the kebab-case naming convention:
 - the entire name must be in lower case
 - spaces are replaced by dashes (`-`)
 
-> i.e.: `git-conventions`
+> i.e., `git-conventions`
 
 ## Commands memo
 
 To sum things up, here's a complete list of the commands discussed in this
 document. Of course, there is a lot more to Git and GitHub, but to keep this
-quite simple, not everything was discussed. Especially troubleshooting which can
-be very tedious, and unless you know what you're doing, you should often ask
-someone who can help troubleshoot.
+quite simple, not everything was discussed. Especially troubleshooting, which 
+can be very tedious, and unless you know what you're doing, you should usually 
+ask someone who can help troubleshoot.
 
 | Command                         | Description                                                                                                               |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -501,8 +503,8 @@ someone who can help troubleshoot.
 | `git add <path/to/file>`        | [add (stage) a single file or folder to be saved in the next commit](#committing-your-changes-and-pushing-them-to-github) |
 | `git add *`                     | [add (stage) all files to be saved in the next commit](#committing-your-changes-and-pushing-them-to-github)               |
 | `git commit -m "<message>"`     | [create a new commit](#committing-your-changes-and-pushing-them-to-github)                                                |
-| `git push origin <branch-name>` | [add local commits to the online repository branch](#committing-your-changes-and-pushing-them-to-github)                         |
-| `git pull origin <branch-name>` | [getting new commits from the online repository branch](#receiving-online-commits-locally)                                       |
+| `git push origin <branch-name>` | [add local commits to the online repository branch](#committing-your-changes-and-pushing-them-to-github)                  |
+| `git pull origin <branch-name>` | [getting new commits from the online repository branch](#receiving-online-commits-locally)                                |
 | `git checkout -b <branch-name>` | [create a new branch](#branches)                                                                                          |
 | `git rebase <branch-name>`      | [rebase the current branch onto another branch (usually `main`)](#branches)                                               |
 | `git checkout <branch-name>`    | [switch to another branch](#branches)                                                                                     |
